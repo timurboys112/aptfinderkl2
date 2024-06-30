@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struk Pembayaran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Struk Pembayaran</h2>
+        <p>Nama: <span id="name"></span></p>
+        <p>Apartemen: <span id="apartment"></span></p>
+        <p>Harga: $<span id="price"></span></p>
+        <p>Nomor Kartu: <span id="cardNumber"></span></p>
+        <p>Tanggal Kadaluarsa: <span id="expiry"></span></p>
+    </div>
+    <script>
+        document.getElementById('name').textContent = localStorage.getItem('name');
+        document.getElementById('apartment').textContent = localStorage.getItem('apartment');
+        document.getElementById('price').textContent = localStorage.getItem('price');
+        document.getElementById('cardNumber').textContent = localStorage.getItem('cardNumber');
+        document.getElementById('expiry').textContent = localStorage.getItem('expiry');
+    </script>
+</body>
+</html>

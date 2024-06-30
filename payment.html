@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Form Pembayaran</h2>
+        <p>Apartemen: <span id="apartment"></span></p>
+        <p>Harga: $<span id="price"></span></p>
+        <form id="paymentForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" required>
+            <label for="cardNumber">Nomor Kartu:</label>
+            <input type="text" id="cardNumber" required>
+            <label for="expiry">Tanggal Kadaluarsa:</label>
+            <input type="text" id="expiry" required>
+            <button type="submit">Bayar</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('apartment').textContent = localStorage.getItem('apartment');
+        document.getElementById('price').textContent = localStorage.getItem('price');
+        
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            localStorage.setItem('name', document.getElementById('name').value);
+            localStorage.setItem('cardNumber', document.getElementById('cardNumber').value);
+            localStorage.setItem('expiry', document.getElementById('expiry').value);
+            window.location.href = 'receipt.html';
+        });
+    </script>
+</body>
+</html>

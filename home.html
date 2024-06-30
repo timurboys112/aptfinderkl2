@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Daftar Apartemen</h2>
+        <ul id="apartmentList">
+            <li>Apartemen A - $500 <button onclick="goToPayment('Apartemen A', 500)">Sewa</button></li>
+            <li>Apartemen B - $600 <button onclick="goToPayment('Apartemen B', 600)">Sewa</button></li>
+            <li>Apartemen C - $700 <button onclick="goToPayment('Apartemen C', 700)">Sewa</button></li>
+        </ul>
+    </div>
+    <script>
+        function goToPayment(apartment, price) {
+            localStorage.setItem('apartment', apartment);
+            localStorage.setItem('price', price);
+            window.location.href = 'payment.html';
+        }
+    </script>
+</body>
+</html>
